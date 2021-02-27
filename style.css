@@ -1,0 +1,105 @@
+/* Google Font (Press Start P2) Import */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Styles the calculator buttons.
+ *
+ * 1. Removes the focus when a button is selected
+ * 2. Styles the total button blue.
+ */
+button {
+    font-size: 24px;
+    border-radius: 4px;
+    outline: none; /* 1 */
+}
+
+button:hover { 
+    color: red;
+    background-color: rgb(200, 200, 200);
+}
+
+button:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.total { /* Styles the equals button separately */
+    background-color: royalblue;
+    color: white;
+}
+
+button.total:hover {
+    background-color: rgb(7, 7, 182);
+    color: rgb(42, 204, 42);
+}
+
+.delete { /* Styles the AC and DEL buttons */
+    background-color: rgb(200, 0, 0);
+}
+
+button.delete:hover {
+    background-color: rgb(140, 0, 0);
+    color: whitesmoke;
+}
+
+/**
+ * Calculator Grid Container
+ * 
+ * This creates a grid container four columns wide of fixed height and width.
+ *
+ * 1. Sets the inter-cell width and height
+ */
+
+.calculator {
+    /* Display & Grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 250px;
+    height: 400px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    margin: auto;
+    padding: 18px;
+    grid-gap: 3px; /* 1 */
+
+    /* Text */
+    font-family: 'Press Start 2P', Courier, monospace;
+
+    /* Other */
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Display Flex Box
+ * 
+ * This creates a column-oriented flexbox within the display cell of the 
+ * calculator grid. 
+ *
+ * 1. Sets the cell to span the entire row in the parent grid.
+ */
+
+.display {
+    /* Display & Grid */
+    grid-column: 1 / 5; /* 1 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0px 0px 15px 0px;
+
+    /* Other */
+    background-color: rgba(43, 199, 95, 0.3);
+    border-style: double;
+}
+
+.current-operand {
+    margin-top: -15px;
+    font-size: 34px;
+}
+
+.previous-operand {
+    margin: 4px 4px -6px 0px;
+    font-size: 14px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
